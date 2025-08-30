@@ -1,4 +1,4 @@
-// KLOFI AI System - The brain of the dynamic CV
+// KLOFI AI System - Fixed prompt loading for /prompts/ folder
 const express = require('express');
 const OpenAI = require('openai');
 const fs = require('fs');
@@ -14,11 +14,21 @@ const openai = new OpenAI({
 // Session storage (in production, you'd use a database)
 const sessions = new Map();
 
-// Load prompt templates and data
+// Load prompt templates - FIXED to look in /prompts/ folder
 function loadPromptTemplate(filename) {
     try {
-        const filePath = path.join(__dirname, '..', filename);
-        return fs.readFileSync(filePath, 'utf8');
+        // Look in the prompts folder
+        const filePath = path.join(__dirname, '..', 'prompts', filename);
+        console.log(`📁 Looking for prompt at: ${filePath}`);
+        
+        if (fs.existsSync(filePath)) {
+            const content = fs.readFileSync(filePath, 'utf8');
+            console.log(`✅ Loaded prompt: ${filename}`);
+            return content;
+        } else {
+            console.log(`❌ Prompt file not found: ${filename}`);
+            return null;
+        }
     } catch (error) {
         console.error(`❌ Error loading prompt ${filename}:`, error);
         return null;
@@ -28,7 +38,16 @@ function loadPromptTemplate(filename) {
 function loadData(filename) {
     try {
         const filePath = path.join(__dirname, '..', 'data', filename);
-        return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+        console.log(`📁 Looking for data at: ${filePath}`);
+        
+        if (fs.existsSync(filePath)) {
+            const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+            console.log(`✅ Loaded data: ${filename}`);
+            return content;
+        } else {
+            console.log(`❌ Data file not found: ${filename}`);
+            return null;
+        }
     } catch (error) {
         console.error(`❌ Error loading data ${filename}:`, error);
         return null;
@@ -39,9 +58,25 @@ function loadData(filename) {
 router.get('/status', (req, res) => {
     const hasOpenAIKey = !!process.env.OPENAI_API_KEY;
     
+    // Check if prompt files exist
+    const promptFiles = [
+        'klofi-master.txt',
+        'klofi-hook.txt', 
+        'klofi-bottleneck.txt',
+        'klofi-closer.txt'
+    ];
+    
+    const promptStatus = promptFiles.map(file => ({
+        file,
+        exists: !!loadPromptTemplate(file)
+    }));
+    
+    console.log('🔍 Prompt file status:', promptStatus);
+    
     res.json({
         status: hasOpenAIKey ? 'ready' : 'no_api_key',
         message: hasOpenAIKey ? 'KLOFI AI system ready' : 'OpenAI API key not configured',
+        prompts: promptStatus,
         timestamp: new Date().toISOString()
     });
 });
@@ -69,7 +104,12 @@ router.post('/hook', async (req, res) => {
         const cvData = loadData('adam-cv.json');
 
         if (!masterPrompt || !hookPrompt || !cvData) {
-            return res.status(500).json({ error: 'Failed to load prompt templates or CV data' });
+            console.log('❌ Missing required files:', {
+                masterPrompt: !!masterPrompt,
+                hookPrompt: !!hookPrompt,
+                cvData: !!cvData
+            });
+            return res.json(getFallbackContent('hook', persona));
         }
 
         // Create session
@@ -100,7 +140,7 @@ Generate a Hook response for persona "${persona.name}" (${persona.role}).`;
 
         // Call OpenAI
         const completion = await openai.chat.completions.create({
-            model: "gpt-4",
+            model: "gpt-4o-mini",
             messages: [
                 {
                     role: "system",
@@ -119,12 +159,12 @@ Generate a Hook response for persona "${persona.name}" (${persona.role}).`;
         try {
             hookContent = JSON.parse(completion.choices[0].message.content);
             hookContent.sessionId = sessionId;
+            console.log('✅ Hook generated successfully by AI');
         } catch (parseError) {
             console.error('❌ Failed to parse AI response:', parseError);
             return res.json(getFallbackContent('hook', persona));
         }
 
-        console.log('✅ Hook generated successfully');
         res.json(hookContent);
 
     } catch (error) {
@@ -157,7 +197,8 @@ router.post('/bottleneck', async (req, res) => {
         const cvData = loadData('adam-cv.json');
 
         if (!masterPrompt || !bottleneckPrompt || !cvData) {
-            return res.status(500).json({ error: 'Failed to load prompt templates or CV data' });
+            console.log('❌ Missing required files for bottleneck');
+            return res.json(getFallbackContent('bottleneck', persona));
         }
 
         // Get session data
@@ -189,7 +230,7 @@ Generate a Bottleneck response for persona "${persona.name}" (${persona.role}).`
 
         // Call OpenAI
         const completion = await openai.chat.completions.create({
-            model: "gpt-4",
+            model: "gpt-4o-mini",
             messages: [
                 {
                     role: "system",
@@ -207,12 +248,12 @@ Generate a Bottleneck response for persona "${persona.name}" (${persona.role}).`
         let bottleneckContent;
         try {
             bottleneckContent = JSON.parse(completion.choices[0].message.content);
+            console.log('✅ Bottleneck generated successfully by AI');
         } catch (parseError) {
             console.error('❌ Failed to parse AI response:', parseError);
             return res.json(getFallbackContent('bottleneck', persona));
         }
 
-        console.log('✅ Bottleneck generated successfully');
         res.json(bottleneckContent);
 
     } catch (error) {
@@ -243,7 +284,8 @@ router.post('/closer', async (req, res) => {
         const closerPrompt = loadPromptTemplate('klofi-closer.txt');
 
         if (!masterPrompt || !closerPrompt) {
-            return res.status(500).json({ error: 'Failed to load prompt templates' });
+            console.log('❌ Missing required prompt files for closer');
+            return res.json(getFallbackContent('closer', persona));
         }
 
         // Prepare the prompt
@@ -259,7 +301,7 @@ Generate a Closer response for persona "${persona.name}" (${persona.role}).`;
 
         // Call OpenAI
         const completion = await openai.chat.completions.create({
-            model: "gpt-4",
+            model: "gpt-4o-mini",
             messages: [
                 {
                     role: "system",
@@ -277,12 +319,12 @@ Generate a Closer response for persona "${persona.name}" (${persona.role}).`;
         let closerContent;
         try {
             closerContent = JSON.parse(completion.choices[0].message.content);
+            console.log('✅ Closer generated successfully by AI');
         } catch (parseError) {
             console.error('❌ Failed to parse AI response:', parseError);
             return res.json(getFallbackContent('closer', persona));
         }
 
-        console.log('✅ Closer generated successfully');
         res.json(closerContent);
 
     } catch (error) {
