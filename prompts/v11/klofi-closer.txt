@@ -1,0 +1,102 @@
+# CLOSER GENERATION - FORWARD-LOOKING VERSION
+
+Your task: Create a compelling closer that references Jurni specifically and makes the next step feel inevitable. This is about the FUTURE, not the past.
+
+## KEY DIFFERENCE
+The Closer doesn't need to pull from CV experiences - we've already proven Adam's capabilities in Hook and Bottleneck. Now it's about connecting those proven skills to Jurni's specific future.
+
+## PERSONA-SPECIFIC CLOSERS
+
+### CEO (Yarden)
+```json
+{
+  "headline": "Let's multiply Jurni's revenue together",
+  "subline": "I'll show you my ROAS optimization playbook",
+  "meetingText": "Let's meet for",
+  "drinkOptions": ["coffee ☕", "whiskey 🥃"],
+  "buttonText": "Schedule strategy session"
+}
+```
+
+### CTO (Tom)
+```json
+{
+  "headline": "Let's push Jurni's AI capabilities to the limit",
+  "subline": "I'll bring my automation frameworks",
+  "meetingText": "Let's meet for",
+  "drinkOptions": ["coffee ☕", "Club Mate 🧉"],
+  "buttonText": "Book tech session"
+}
+```
+
+### CPO (Roee)
+```json
+{
+  "headline": "Let's design Jurni's perfect customer journey",
+  "subline": "I'll bring my sketchbook and best ideas",
+  "meetingText": "Let's meet for",
+  "drinkOptions": ["coffee ☕", "wine 🍷"],
+  "buttonText": "Start designing"
+}
+```
+
+### VP BD (Shon)
+```json
+{
+  "headline": "Let's turn Jurni's customers into growth advocates",
+  "subline": "I'll share my partnership playbook",
+  "meetingText": "Let's meet for",
+  "drinkOptions": ["coffee ☕", "lunch 🥗"],
+  "buttonText": "Plan partnerships"
+}
+```
+
+### CoS (Eyal)
+```json
+{
+  "headline": "Let's execute Jurni's expansion with military precision",
+  "subline": "Strategic planning meets agile execution",
+  "meetingText": "Let's meet for",
+  "drinkOptions": ["coffee ☕", "whiskey 🥃"],
+  "buttonText": "Mission planning"
+}
+```
+
+### Mom
+```json
+{
+  "headline": "Mom, I found the perfect creative challenge at Jurni",
+  "subline": "Finally using all my talents in one place",
+  "meetingText": "Let's celebrate with",
+  "drinkOptions": ["tea ☕", "cake 🍰"],
+  "buttonText": "Share the news"
+}
+```
+
+## JSON STRUCTURE REQUIRED
+```json
+{
+  "headline": "[Future-focused statement mentioning Jurni by name]",
+  "subline": "[What Adam brings to the table]",
+  "meetingText": "Let's meet for",
+  "drinkOptions": [
+    "[Drink 1 with emoji]",
+    "[Drink 2 with emoji]"
+  ],
+  "buttonText": "[Action-oriented CTA]"
+}
+```
+
+## TONE GUIDE
+- CEO: Direct, ROI-focused, ambitious
+- CTO: Technical, innovative, collaborative
+- CPO: Creative, user-focused, design-minded
+- VP BD: Relationship-focused, partnership-oriented
+- CoS: Strategic, operational, execution-focused
+- Mom: Warm, proud, personal
+
+## REMEMBER
+- Always mention "Jurni" by name in the headline
+- Make it about the future collaboration, not past achievements
+- Choose drink options that match the persona's style
+- Keep it concise but compelling

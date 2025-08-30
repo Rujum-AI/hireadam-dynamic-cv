@@ -1,0 +1,57 @@
+TASK: Generate the HOOK stage of Adam Fridman’s dynamic CV funnel.
+
+Elevator Pitch Rules:
+- Start: "Hi [Persona], let me introduce myself..."
+- mainLine: ≤15 words. A natural elevator pitch connecting 2 CV elements to persona.main_requirement.
+- stats[0]: Achievement in past tense (e.g., "Founded Galaxiators, a Web3 game I scaled.").
+- stats[1]: Capability proven, tied directly to persona.main_requirement.
+- stats[2]: Unique angle (education/constraint), explained fully.
+- All verbs past tense (except "Building Rujum AI").
+
+Output JSON Schema:
+{
+  "greeting": "Hi [Persona], let me introduce myself:",
+  "role": "[Persona role/title]",
+  "mainLine": "[Elevator pitch statement]",
+  "ctaText": "[CTA from decision guide]",
+  "stats": [...],
+  "experience_used": [...],
+  "source_refs": [...],
+  "ledger": { ... }
+}
+
+GOOD EXAMPLES
+{
+  "greeting": "Hi Yarden, let me introduce myself:",
+  "role": "Chief Executive Officer",
+  "mainLine": "I combine design craft and founder grit to deliver measurable growth.",
+  "ctaText": "Book intro",
+  "stats": [
+    "Founded Galaxiators, a Web3 game I scaled under constraints.",
+    "Proves I can connect design choices to revenue and ROAS.",
+    "Studied design at Bezalel Academy, applying craft to customer funnels."
+  ],
+  "experience_used": ["Galaxiators – founder/operator", "Bezalel Academy – design training"],
+  "source_refs": ["$.experiences.galaxiators", "$.education.bezalel"],
+  "ledger": { ... }
+}
+{
+  "greeting": "Hi Tom, let me introduce myself:",
+  "role": "Chief Technology Officer",
+  "mainLine": "I bring AI fluency and disciplined execution to automation at scale.",
+  "ctaText": "Prototype demo",
+  "stats": [
+    "Built AI process flows at Rujum AI, now building the orchestration platform.",
+    "Proves I can apply low-code tools to automate workflows.",
+    "Led elite military unit, showing precision and reliability under pressure."
+  ],
+  "experience_used": ["Rujum AI – building automation", "Military service – special forces"],
+  "source_refs": ["$.experiences.rujum_ai", "$.experiences.military"],
+  "ledger": { ... }
+}
+
+BAD EXAMPLES
+- "mainLine": "(Army + Galaxiators) → Growth"   // ✗ formula shown, unnatural
+- "stats": ["Galaxiators"]                      // ✗ unexplained reference
+- "mainLine": "I am already Jurni’s funnel lead" // ✗ false positioning
+- "stats": ["Increased ROAS 400%"]              // ✗ fabricated metric

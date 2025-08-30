@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireAdam - AI-Powered Growth Designer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">HireAdam</a>
+            <nav class="header-nav">
+                <!-- CV Mode Toggle -->
+                <div class="cv-mode-toggle" id="cvModeToggle">
+                    <button class="cv-mode-btn active" id="dynamicCvBtn">Dynamic CV</button>
+                    <button class="cv-mode-btn" id="staticCvBtn">Static CV</button>
+                    <div class="cv-mode-indicator dynamic-mode" id="cvModeIndicator"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Persona Selection Section -->
+        <section class="persona-selection" id="personaSelectionStep">
+            <div class="selection-container">
+                <h1 class="landing-headline">
+                    <span class="typing-text" id="typingText"></span>
+                </h1>
+                
+                <!-- Persona Navigation Cards -->
+                <div class="persona-nav-grid" id="personaNavGrid">
+                    <!-- Persona cards will be populated here by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript Files -->
+    <script src="js/app.js"></script>
+    <script src="js/persona-selection.js"></script>
+    <script src="js/thehook.js"></script>
+    <script src="js/bottleneck.js"></script>
+    <script src="js/closer.js"></script>
+    <script src="js/funnel-controller.js"></script>
+
+    <script>
+        // Initialize the application when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            App.init();
+            initializeToggle();
+        });
+
+        // Initialize the toggle functionality
+        function initializeToggle() {
+            document.getElementById('dynamicCvBtn').addEventListener('click', switchToDynamicCV);
+            document.getElementById('staticCvBtn').addEventListener('click', switchToStaticCV);
+        }
+
+        function switchToDynamicCV() {
+            // Already on dynamic CV page (index.html)
+            document.getElementById('dynamicCvBtn').classList.add('active');
+            document.getElementById('staticCvBtn').classList.remove('active');
+            document.getElementById('cvModeIndicator').className = 'cv-mode-indicator dynamic-mode';
+        }
+
+        function switchToStaticCV() {
+            window.location.href = 'cv.html';
+        }
+    </script>
+</body>
+</html>

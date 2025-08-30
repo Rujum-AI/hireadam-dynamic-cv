@@ -1,0 +1,284 @@
+{
+  "ceo": {
+    "theme": {
+      "primary": "#10b981",
+      "secondary": "#059669", 
+      "accent": "#fbbf24",
+      "fontFamily": "Montserrat",
+      "animationSpeed": "fast"
+    },
+    "hook": {
+      "greeting": "Hi Yarden,",
+      "role": "CEO who gets it",
+      "mainLine": "Looking for someone who can turn every dollar into measurable growth and ROAS?",
+      "ctaText": "Show me the numbers",
+      "stats": ["427% ROAS improvement", "$2.3M revenue generated", "15+ funnels optimized"]
+    },
+    "bottleneck": {
+      "headline": "I speak your language: Revenue, Growth, ROAS",
+      "priorities": [
+        {
+          "title": "Growth",
+          "icon": "📈",
+          "proof": "Scaled Galaxiators from 0 to $500K funding",
+          "detail": "Led product strategy and go-to-market execution"
+        },
+        {
+          "title": "Revenue", 
+          "icon": "💰",
+          "proof": "Built revenue-generating funnels for 3 startups",
+          "detail": "Focused on conversion optimization and AOV increase"
+        },
+        {
+          "title": "ROAS",
+          "icon": "🎯",
+          "proof": "AI-powered funnel optimization platform",
+          "detail": "Currently building Rujum AI for smarter customer journeys"
+        }
+      ],
+      "ctaText": "See the proof"
+    },
+    "closer": {
+      "headline": "Let's talk Jurni & exponential growth",
+      "subline": "I'll show you exactly how to maximize every customer interaction",
+      "meetingText": "Let's meet for",
+      "drinkOptions": ["coffee ☕", "beer 🍺"],
+      "buttonText": "Lock in 30 minutes"
+    }
+  },
+  "cto": {
+    "theme": {
+      "primary": "#8b5cf6",
+      "secondary": "#7c3aed",
+      "accent": "#06b6d4",
+      "fontFamily": "Space Grotesk",
+      "animationSpeed": "medium"
+    },
+    "hook": {
+      "greeting": "Hi Tom,",
+      "role": "Technical Leader",
+      "mainLine": "Looking for someone who pushes AI and no-code tools to their absolute limits?",
+      "ctaText": "Check my stack",
+      "stats": ["GPT-4 integration expert", "15+ automation workflows", "Zero to MVP in weeks"]
+    },
+    "bottleneck": {
+      "headline": "Building the future with AI, one automation at a time",
+      "priorities": [
+        {
+          "title": "AI Integration",
+          "icon": "🤖",
+          "proof": "3 years building with ChatGPT (before it was cool)",
+          "detail": "Rujum AI: Full GPT-4 integration for funnel optimization"
+        },
+        {
+          "title": "Scalability",
+          "icon": "⚡",
+          "proof": "Built systems handling 10K+ users",
+          "detail": "Galaxiators: Architected scalable Web3 gaming platform"
+        },
+        {
+          "title": "Automation",
+          "icon": "🔄",
+          "proof": "No-code workflows that actually work",
+          "detail": "Automated entire customer journey pipelines"
+        }
+      ],
+      "ctaText": "Let's build together"
+    },
+    "closer": {
+      "headline": "Let's geek out about Jurni & AI-powered scale",
+      "subline": "I'll show you my automation playbook",
+      "meetingText": "Let's meet for",
+      "drinkOptions": ["coffee ☕", "Club Mate 🧉"],
+      "buttonText": "Schedule tech talk"
+    }
+  },
+  "cpo": {
+    "theme": {
+      "primary": "#ec4899",
+      "secondary": "#db2777",
+      "accent": "#f59e0b",
+      "fontFamily": "Playfair Display",
+      "animationSpeed": "smooth"
+    },
+    "hook": {
+      "greeting": "Hi Roee,",
+      "role": "Product Visionary",
+      "mainLine": "Looking for someone who obsesses over every pixel of the customer journey?",
+      "ctaText": "See my designs",
+      "stats": ["98% completion rate", "3.2s avg. engagement", "A/B tested everything"]
+    },
+    "bottleneck": {
+      "headline": "Crafting journeys that convert and delight",
+      "priorities": [
+        {
+          "title": "User Experience",
+          "icon": "✨",
+          "proof": "BFA in Design + 7 years crafting digital experiences",
+          "detail": "From Bezalel Academy to production-ready designs"
+        },
+        {
+          "title": "Conversion",
+          "icon": "🚀",
+          "proof": "Optimized funnels with 3x conversion uplift",
+          "detail": "Data-driven design decisions that actually work"
+        },
+        {
+          "title": "Design Systems",
+          "icon": "🎨",
+          "proof": "Built scalable design systems for 3 products",
+          "detail": "Component-based thinking for consistent UX"
+        }
+      ],
+      "ctaText": "View portfolio"
+    },
+    "closer": {
+      "headline": "Let's perfect Jurni's customer journey together",
+      "subline": "I'll bring my sketchbook and best ideas",
+      "meetingText": "Let's meet for",
+      "drinkOptions": ["coffee ☕", "wine 🍷"],
+      "buttonText": "Book design session"
+    }
+  },
+  "vp_bd": {
+    "theme": {
+      "primary": "#f59e0b",
+      "secondary": "#d97706",
+      "accent": "#3b82f6",
+      "fontFamily": "Inter",
+      "animationSpeed": "dynamic"
+    },
+    "hook": {
+      "greeting": "Hi Shon,",
+      "role": "Partnership Builder",
+      "mainLine": "Looking for someone who can turn customers into your best sales channel?",
+      "ctaText": "See success stories",
+      "stats": ["92% customer retention", "5-star support rating", "White-glove onboarding"]
+    },
+    "bottleneck": {
+      "headline": "Turning customers into growth partners",
+      "priorities": [
+        {
+          "title": "Partnerships",
+          "icon": "🤝",
+          "proof": "Built strategic partnerships across 3 continents",
+          "detail": "From Singapore's 1880 Club to Tel Aviv's tech scene"
+        },
+        {
+          "title": "Customer Success",
+          "icon": "⭐",
+          "proof": "Hands-on support that drives results",
+          "detail": "Personal approach to every funnel launch"
+        },
+        {
+          "title": "Results",
+          "icon": "📊",
+          "proof": "Measurable impact on every project",
+          "detail": "Clear KPIs and transparent reporting"
+        }
+      ],
+      "ctaText": "Let's partner up"
+    },
+    "closer": {
+      "headline": "Let's discuss Jurni partnerships & customer wins",
+      "subline": "I'll share my collaboration framework",
+      "meetingText": "Let's meet for",
+      "drinkOptions": ["coffee ☕", "lunch 🥗"],
+      "buttonText": "Plan partnership"
+    }
+  },
+  "cos": {
+    "theme": {
+      "primary": "#059669",
+      "secondary": "#047857",
+      "accent": "#dc2626",
+      "fontFamily": "Bebas Neue",
+      "animationSpeed": "sharp"
+    },
+    "hook": {
+      "greeting": "Hi Eyal,",
+      "role": "Strategic Operator",
+      "mainLine": "Looking for someone who executes with military precision and startup agility?",
+      "ctaText": "Check credentials",
+      "stats": ["8 years special ops", "3 successful pivots", "Zero missed deadlines"]
+    },
+    "bottleneck": {
+      "headline": "From special forces to special products",
+      "priorities": [
+        {
+          "title": "Discipline",
+          "icon": "🎖️",
+          "proof": "Elite military training: Flotilla 13 & Unit 81",
+          "detail": "Tier-1 special forces planning and execution"
+        },
+        {
+          "title": "Execution",
+          "icon": "🎯",
+          "proof": "Ship fast, ship right, ship consistently",
+          "detail": "From concept to MVP in record time"
+        },
+        {
+          "title": "Strategy",
+          "icon": "♟️",
+          "proof": "Think 10 steps ahead, adapt on step 2",
+          "detail": "Strategic planning meets tactical flexibility"
+        }
+      ],
+      "ctaText": "Mission briefing"
+    },
+    "closer": {
+      "headline": "Let's strategize Jurni's market domination",
+      "subline": "I'll bring the tactical playbook",
+      "meetingText": "Let's meet for",
+      "drinkOptions": ["coffee ☕", "whiskey 🥃"],
+      "buttonText": "Begin operation"
+    }
+  },
+  "mom": {
+    "theme": {
+      "primary": "#ec4899",
+      "secondary": "#be185d",
+      "accent": "#a855f7",
+      "fontFamily": "Playfair Display",
+      "animationSpeed": "gentle"
+    },
+    "hook": {
+      "greeting": "Hi Mom,",
+      "role": "Proud Parent",
+      "mainLine": "Your son found his perfect match - a company that values creativity and growth!",
+      "ctaText": "See why I'm excited",
+      "stats": ["Perfect culture fit", "Growth opportunity", "Using all my talents"]
+    },
+    "bottleneck": {
+      "headline": "Why Jurni is perfect for your creative son",
+      "priorities": [
+        {
+          "title": "Success",
+          "icon": "🏆",
+          "proof": "Building something meaningful",
+          "detail": "AI-powered tools that help businesses grow"
+        },
+        {
+          "title": "Happiness",
+          "icon": "😊",
+          "proof": "Finally using my creative side",
+          "detail": "Design + Tech + Strategy = Dream job"
+        },
+        {
+          "title": "Stability",
+          "icon": "🏠",
+          "proof": "Established company with real customers",
+          "detail": "Competitive salary + equity = secured future"
+        }
+      ],
+      "ctaText": "Tell your friends"
+    },
+    "closer": {
+      "headline": "Tell your book club: Adam found his calling",
+      "subline": "And yes, they offer good benefits too",
+      "meetingText": "Let's celebrate with",
+      "drinkOptions": ["tea ☕", "cake 🍰"],
+      "buttonText": "Share the news"
+    }
+  }
+}

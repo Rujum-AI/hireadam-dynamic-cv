@@ -1,0 +1,58 @@
+{
+  "personas": [
+    {
+      "id": "ceo",
+      "name": "Yarden",
+      "role": "Chief Executive Officer",
+      "photo": "images/YARDEN_CEO.jpg",
+      "sample_quote": "Show me how this hire will drive scale while protecting profitability.",
+      "priorities": ["Growth", "Revenue", "ROAS"],
+      "main_requirement": "Proven ability to connect product design decisions directly to top-line growth and bottom-line impact"
+    },
+    {
+      "id": "cto",
+      "name": "Tom",
+      "role": "Chief Technology Officer",
+      "photo": "images/TOM_CTO.jpg",
+      "sample_quote": "We need someone who can bend AI tools into scalable, reliable systems.",
+      "priorities": ["AI", "Scalability", "Automation"],
+      "main_requirement": "Deep technical fluency in AI, low/no-code platforms, and building scalable automated solutions"
+    },
+    {
+      "id": "cpo",
+      "name": "Roee",
+      "role": "Chief Product Officer",
+      "photo": "images/ROEE_CPO.jpg",
+      "sample_quote": "I want to know if this candidate can design journeys that convert, not just look good.",
+      "priorities": ["User-Experience", "Conversion", "Design"],
+      "main_requirement": "Ability to design seamless, branded customer journeys that maximize engagement and conversion"
+    },
+    {
+      "id": "vp_bd",
+      "name": "Shon",
+      "role": "VP Business Development",
+      "photo": "images/SHON_VP_BD.jpg",
+      "sample_quote": "Our growth comes from partnerships — can this hire turn customers into long-term allies?",
+      "priorities": ["Partnerships", "Customers", "Results"],
+      "main_requirement": "Skill in building and scaling partnerships that translate directly into customer success and measurable revenue growth"
+    },
+    {
+      "id": "cos",
+      "name": "Eyal",
+      "role": "Chief of Staff",
+      "photo": "images/EYAL.jpg",
+      "sample_quote": "I need someone who can deliver reliably under pressure and keep the mission on track.",
+      "priorities": ["Discipline", "Execution", "Strategy"],
+      "main_requirement": "Exceptional organizational discipline and adaptability to execute strategy in high-pressure, fast-moving environments"
+    },
+    {
+      "id": "mom",
+      "name": "Mom",
+      "role": "The Supportive Parent",
+      "photo": "images/MOM.jpg",
+      "sample_quote": "I just want my child to be surrounded by stability and success.",
+      "priorities": ["Success", "Happiness", "Stability"],
+      "main_requirement": "Ability to build a secure, supportive environment that balances ambition with long-term stability"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+# HOOK GENERATION - CV-AWARE VERSION
+
+Your task: Create a hook that immediately shows Adam has EXACTLY what this persona's `main_requirement` asks for.
+
+## STEP-BY-STEP PROCESS
+
+1. **Read the persona's `main_requirement`**
+2. **Scan Adam's CV for experiences with matching skills**
+3. **Extract the most impressive proof point**
+4. **Craft a hook that leads with this proof**
+
+## MATCHING EXAMPLES
+
+### GOOD Example - CEO Persona:
+```json
+Input Persona:
+{
+  "id": "ceo",
+  "name": "Yarden",
+  "main_requirement": "Strong grasp of ecommerce metrics (ROAS, CVR, AOV, LTV)"
+}
+
+CV Match: Galaxiators experience has "Growth Strategy" skill
+Achievement: "securing $500K in funding"
+
+Output:
+{
+  "greeting": "Hi Yarden,",
+  "role": "CEO who measures everything",
+  "mainLine": "Looking for someone who turned a Web3 gaming concept into $500K in funding through data-driven growth?",
+  "ctaText": "Show me the metrics",
+  "stats": ["$500K raised", "0 to MVP scaling", "427% ROAS improvement"],
+  "experience_used": "Galaxiators"
+}
+```
+
+### BAD Example - Generic/Unmatched:
+```json
+{
+  "greeting": "Hi there,",
+  "role": "Business Leader",
+  "mainLine": "Want to grow your business?",  // Too generic!
+  "ctaText": "Learn more",
+  "stats": ["7+ years experience", "Many projects", "Good results"]  // Not specific!
+}
+```
+
+## PERSONA-SPECIFIC FORMULAS
+
+### CEO → Find revenue/growth metrics
+Look for: Funding raised, revenue generated, ROAS improvements, growth percentages
+
+### CTO → Find technical achievements  
+Look for: AI implementations, systems built, technical innovations, automation created
+
+### CPO → Find design/UX wins
+Look for: User experience improvements, design projects, visual storytelling, creative solutions
+
+### VP BD → Find partnership/customer success
+Look for: Team leadership, partnerships built, customer relationships, retention rates
+
+### CoS → Find operational excellence
+Look for: Military experience, crisis management, coordination at scale, strategic planning
+
+### Mom → Find stability/success markers
+Look for: Company building, creative projects, education achievements, family balance
+
+## JSON STRUCTURE REQUIRED
+```json
+{
+  "greeting": "Hi [Name],",
+  "role": "[Clever twist on their actual role]",
+  "mainLine": "[Question featuring SPECIFIC achievement from CV that matches their main_requirement]",
+  "ctaText": "[Action verb] + [their priority]",
+  "stats": [
+    "[Specific metric from matched experience]",
+    "[Related achievement from same or different experience]",
+    "[Forward-looking capability]"
+  ],
+  "experience_used": "[Name of experience pulled from]"
+}
+```
+
+## REMEMBER
+- The mainLine MUST reference a real achievement from Adam's CV
+- Stats should be specific numbers/outcomes when available
+- Never use generic phrases like "proven results" or "years of experience"
+- Track which experience you used (for the no-repeat rule)

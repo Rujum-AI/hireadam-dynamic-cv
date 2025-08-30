@@ -1,0 +1,97 @@
+TASK: Generate the BOTTLENECK stage of Adam Fridman’s dynamic CV funnel.
+
+Rules:
+- Exactly 3 blocks, in persona.priorities order.
+- ONE distinct experience per block (no combos, no repeats).
+- Header = Verb + Subject (≤6 words, past tense unless “Building Rujum AI”).
+- Info = ≤15 words, why it matters for funnels, stranger-proof.
+- Headline = 8–15 words, persona-relevant, not reused from Hook.
+- CTA = 2–3 words, chosen via CTA decision guide.
+
+Output JSON Schema:
+{
+  "headline": "[summary across all 3 priorities]",
+  "priorities": [
+    {
+      "title": "[priority]",
+      "icon": "[emoji]",
+      "header": "[Verb + Subject]",
+      "info": "[Why it matters for funnels]",
+      "experience_source": "[Experience name + context]",
+      "source_refs": [...]
+    },
+    { ... }, { ... }
+  ],
+  "ctaText": "[2–3 word CTA]",
+  "ledger": { ... }
+}
+
+GOOD EXAMPLES
+{
+  "headline": "Three ways I address your funnel priorities",
+  "priorities": [
+    {
+      "title": "Growth",
+      "icon": "📈",
+      "header": "Founded Galaxiators – a Web3 game",
+      "info": "I scaled under constraints, proving scrappy growth execution.",
+      "experience_source": "Galaxiators – founder/operator",
+      "source_refs": ["$.experiences.galaxiators"]
+    },
+    {
+      "title": "Conversion",
+      "icon": "🎨",
+      "header": "Studied Screen-Based Arts at Bezalel",
+      "info": "I applied design craft to improve funnel clarity.",
+      "experience_source": "Bezalel Academy – design education",
+      "source_refs": ["$.education.bezalel"]
+    },
+    {
+      "title": "Execution",
+      "icon": "⚔️",
+      "header": "Led Special Forces missions",
+      "info": "I proved disciplined execution under pressure.",
+      "experience_source": "Military service – special forces",
+      "source_refs": ["$.experiences.military"]
+    }
+  ],
+  "ctaText": "Start today",
+  "ledger": { ... }
+}
+{
+  "headline": "Addressing design, automation, and growth priorities",
+  "priorities": [
+    {
+      "title": "AI",
+      "icon": "🤖",
+      "header": "Building Rujum AI",
+      "info": "I design AI-native workflows for scalable automation.",
+      "experience_source": "Rujum AI – ongoing",
+      "source_refs": ["$.experiences.rujum_ai"]
+    },
+    {
+      "title": "Design",
+      "icon": "🎨",
+      "header": "Studied at Bezalel Academy",
+      "info": "I crafted user-focused design that drives conversion.",
+      "experience_source": "Bezalel Academy – design",
+      "source_refs": ["$.education.bezalel"]
+    },
+    {
+      "title": "Strategy",
+      "icon": "🧭",
+      "header": "Led Special Forces operations",
+      "info": "I executed under pressure, showing reliable strategy.",
+      "experience_source": "Military service – leadership",
+      "source_refs": ["$.experiences.military"]
+    }
+  ],
+  "ctaText": "Scope v1",
+  "ledger": { ... }
+}
+
+BAD EXAMPLES
+- "header": "Galaxiators"                         // ✗ missing verb + context
+- "header": "(Bezalel + Galaxiators) → Growth"    // ✗ combo, not allowed
+- "info": "Military = revenue growth"             // ✗ illogical mapping
+- "info": "Increased ROAS 400%"                   // ✗ fabricated metric

@@ -1,0 +1,135 @@
+# BOTTLENECK GENERATION - CV-AWARE VERSION
+
+Your task: Create three priority cards, each backed by a DIFFERENT experience from Adam's CV that wasn't used in the Hook.
+
+## STEP-BY-STEP PROCESS
+
+1. **Check which experience was used in Hook** (never reuse it)
+2. **Read the persona's 3 `priorities`**
+3. **Match EACH priority to a DIFFERENT CV experience based on skills**
+4. **Extract specific achievements for each match**
+5. **Create compelling proof points**
+
+## MATCHING EXAMPLES
+
+### GOOD Example - CEO Persona:
+```json
+Input:
+{
+  "priorities": ["Growth", "Revenue", "ROAS"],
+  "experience_used_in_hook": "Galaxiators"
+}
+
+CV Matching:
+- "Growth" → Rujum AI (has "AI Integration", "Product Design")
+- "Revenue" → Singapore Entrepreneur (has "Creative Problem Solving")  
+- "ROAS" → Special Operations (has "Leadership", "Innovation")
+
+Output:
+{
+  "headline": "From military precision to revenue multiplication",
+  "priorities": [
+    {
+      "title": "Growth",
+      "icon": "🚀",
+      "proof": "Building Rujum AI to turn raw ambition into structured workspaces",
+      "detail": "AI-native orchestration that scales",
+      "experience_source": "Rujum AI"
+    },
+    {
+      "title": "Revenue",
+      "icon": "💰",
+      "proof": "Traded design for Formula 1 tickets in Singapore",
+      "detail": "Creating value from zero resources",
+      "experience_source": "Singapore"
+    },
+    {
+      "title": "ROAS",
+      "icon": "🎯",
+      "proof": "Co-founded new unit in Shayetet 13 from ground up",
+      "detail": "Military efficiency meets startup agility",
+      "experience_source": "Special Operations"
+    }
+  ],
+  "ctaText": "See the full picture",
+  "experiences_used": ["Rujum AI", "Singapore", "Special Operations"]
+}
+```
+
+### BAD Example - Repeated/Generic:
+```json
+{
+  "priorities": [
+    {
+      "title": "Growth",
+      "proof": "Grew many things",  // Too vague!
+      "experience_source": "Galaxiators"  // Already used in Hook!
+    },
+    {
+      "title": "Revenue", 
+      "proof": "Made money",  // Not specific!
+      "experience_source": "Galaxiators"  // Repeated experience!
+    }
+  ]
+}
+```
+
+## SKILL-TO-PRIORITY MAPPING
+
+### Growth-related priorities:
+Skills to find: "Startup Building", "Leadership", "Growth Strategy", "Product Strategy"
+
+### Technical priorities:
+Skills to find: "AI Integration", "System Design", "Automation", "Product Development"
+
+### Design priorities:
+Skills to find: "UX/UI Design", "Visual Design", "Product Design", "Storytelling"
+
+### Operational priorities:
+Skills to find: "Project Management", "Leadership", "Crisis Management", "Coordination"
+
+## JSON STRUCTURE REQUIRED
+```json
+{
+  "headline": "[Compelling headline that ties all three priorities together]",
+  "priorities": [
+    {
+      "title": "[Priority 1 from persona]",
+      "icon": "[Relevant emoji]",
+      "proof": "[Specific achievement from CV experience 1]",
+      "detail": "[How this translates to value for them]",
+      "experience_source": "[CV experience name]"
+    },
+    {
+      "title": "[Priority 2 from persona]",
+      "icon": "[Relevant emoji]",
+      "proof": "[Specific achievement from CV experience 2]",
+      "detail": "[How this translates to value for them]",
+      "experience_source": "[CV experience name]"
+    },
+    {
+      "title": "[Priority 3 from persona]",
+      "icon": "[Relevant emoji]",
+      "proof": "[Specific achievement from CV experience 3]",
+      "detail": "[How this translates to value for them]",
+      "experience_source": "[CV experience name]"
+    }
+  ],
+  "ctaText": "[Action-oriented next step]",
+  "experiences_used": ["Experience1", "Experience2", "Experience3"]
+}
+```
+
+## AVAILABLE EXPERIENCES TO CHOOSE FROM
+1. Rujum AI (2025-Present) - AI Integration, Product Design, System Design, Automation, UX/UI Design
+2. Singapore Entrepreneur (2020-2022) - AI Integration, Product Design, Creative Problem Solving
+3. Galaxiators (2021-2024) - Startup Building, Leadership, Product Strategy, UX/UI Design, Project Management
+4. BeastMode Workshop (2018-2020) - Visual Design
+5. Security/Training (2013-2018) - Leadership, Crisis Management, Training, Coordination
+6. Special Operations (2005-2013) - Innovation, Leadership, Product Development, Project Management, Decision Making
+
+## REMEMBER
+- Each priority MUST use a DIFFERENT experience
+- Never reuse the experience from Hook
+- Pull actual achievements from the CV, not generic statements
+- Track all experiences used for validation

@@ -1,0 +1,159 @@
+{
+  "profile": {
+    "photo": "images/adam.jpg",
+    "name": "Adam Fridman",
+    "email": "friadaman@gmail.com",
+    "phone": "+972-55-775-6877",
+    "whatsapp": "+65-8158-0570",
+    "location": "Maccabim, Israel"
+  },
+  "bio": "Founder-minded Product Designer with a unique background: elite special operations, fine arts, and AI-powered product building. I build systems that turn raw ambition into structured, usable products - whether AI workspaces, or startups. Blending grit, creativity, and strategy, I translate complex challenges into designs that actually drive growth.",
+  "experiences": [
+    {
+      "title": "Builder – Rujum AI",
+      "company": "Rujum AI [personal project]",
+      "period": "2025–Present",
+      "location": "Tel Aviv, Israel",
+      "thumbnail": "images/cv/rujum-ai.jpg",
+      "achievements": [
+        {
+          "text": "Building Rujum AI, an AI-native orchestration platform that turns raw ambition into structured, fully AI-provisioned workspaces.",
+          "skills": ["AI", "Product Design"]
+        },
+        {
+          "text": "Designed system logic for AI agents to plan, execute, and validate complex workflows.",
+          "skills": ["System Design", "Automation"]
+        },
+        {
+          "text": "Shaped the user journey from a single prompt to a usable workspace—making AI feel like a co-founder, not a tool.",
+          "skills": ["UX/UI Design"]
+        }
+      ]
+    },
+    {
+      "title": "Independent Entrepreneur & Designer",
+      "company": "Self-Employed",
+      "period": "2020–2022",
+      "location": "Singapore",
+      "thumbnail": "images/cv/sg.jpg",
+      "achievements": [
+        {
+          "text": "Built a barter economy app (barter-lah!) while unable to apply for a work permit in Singapore—co-designed with ChatGPT v3 (before it was mainstream).",
+          "skills": ["AI", "Product Design"]
+        },
+        {
+          "text": "Exchanged PT sessions for workspace, mentorship (YC alum, ex-Uber), and even Formula 1 tickets.",
+          "skills": ["Creative Problem Solving"]
+        }
+      ]
+    },
+    {
+      "title": "Co-Founder & Product Lead",
+      "company": "Galaxiators (Web3 Gaming)",
+      "period": "2021–2024",
+      "location": "South Africa / Singapore",
+      "thumbnail": "images/cv/glx.jpg",
+      "achievements": [
+        {
+          "text": "Co-founded and grew a Web3 gaming startup, securing $500K in funding.",
+          "skills": ["Startup Building", "Leadership"]
+        },
+        {
+          "text": "Directed product design, player experience, and go-to-market strategy.",
+          "skills": ["Product Strategy", "UX/UI Design"]
+        },
+        {
+          "text": "Navigated multiple pivots before external geopolitical factors [7/10] forced closure—building resilience through adversity.",
+          "skills": ["Project Management"]
+        }
+      ]
+    },
+    {
+      "title": "Freelance Artist",
+      "company": "BeastMode Workshop",
+      "period": "2018–2020",
+      "location": "South Africa",
+      "thumbnail": "images/cv/bmw.jpeg",
+      "achievements": [
+        {
+          "text": "Created handmade physical collectibles and digital design projects—maintaining creativity between ventures.",
+          "skills": ["Visual Design"]
+        }
+      ]
+    },
+    {
+      "title": "Security, Training & Events Production",
+      "company": "Various Organizations",
+      "period": "2013–2018",
+      "location": "Israel",
+      "achievements": [
+        {
+          "text": "Led cross-campus security at Hebrew University, managing 50+ staff and coordinating emergency responses.",
+          "skills": ["Leadership", "Crisis Management"]
+        },
+        {
+          "text": "Delivered pre-military training programs on resilience and performance under pressure.",
+          "skills": ["Training", "Leadership"]
+        },
+        {
+          "text": "Managed event production logistics for expos, exhibitions, and sporting events.",
+          "skills": ["Coordination"]
+        }
+      ]
+    },
+    {
+      "title": "Special Operations Officer",
+      "company": "IDF – Yahalom > Unit 81 > Flotilla 13",
+      "period": "2005–2013",
+      "location": "Israel",
+      "achievements": [
+        {
+          "text": "Co-founded a new operational unit within Shayetet 13, designing its mission, training, and systems from the ground up.",
+          "skills": ["Innovation", "Leadership"]
+        },
+        {
+          "text": "Led operations and product development in Unit 81, from requirements to deployment in the field.",
+          "skills": ["Product Development", "Project Management"]
+        },
+        {
+          "text": "Advanced from standard units to tier-1 special forces, completing multiple elite training programs.",
+          "skills": ["Leadership", "Decision Making", "Adaptability", "Resilience"]
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Entrepreneurship Program",
+      "school": "SCOLA – Unit 81 Alumni Association",
+      "period": "2025",
+      "location": "Tel Aviv, Israel",
+      "details": [
+        {
+          "text": "Completed a 4-month intensive program in startup building, venture design, and go-to-market strategy.",
+          "skills": ["Startup Building"]
+        },
+        {
+          "text": "Capstone: prototyped Rujum AI, an AI-powered orchestration platform.",
+          "skills": ["AI", "Product Strategy"]
+        }
+      ]
+    },
+    {
+      "degree": "Bachelor of Arts – Screen-Based Arts",
+      "school": "Bezalel Academy of Arts & Design",
+      "period": "2017",
+      "location": "Jerusalem, Israel",
+      "details": [
+        {
+          "text": "Specialized in animation and visual storytelling, building a strong foundation in narrative and design.",
+          "skills": ["Storytelling", "Visual Design"]
+        }
+      ]
+    }
+  ],
+  "personal": {
+    "family": "Father of Kai (6) & Rom (5)",
+    "interests": ["Diving", "Endurance & functional training", "Cooking", "Whisky"]
+  }
+}

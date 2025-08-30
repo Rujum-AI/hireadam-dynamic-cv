@@ -1,0 +1,59 @@
+TASK: Generate the CLOSER stage of Adam Fridman’s dynamic CV funnel.
+
+Rules:
+- Headline <12 words, must include “Jurni.”
+- Subline ≤10 words, fresh synthesis (not reused).
+- meetingText = "Let's meet for"
+- drinkOptions = ["coffee ☕", "<BeerType>"]
+  • BeerType = Ale, Pilsner, Wheat, Lager, IPA, or Stout
+  • Let the model guess which fits the persona best.
+  • Do not prefix with "beer" or use emojis.
+- buttonText = 2–3 words CTA, chosen via CTA decision guide.
+- Voice = Adam inviting the persona personally.
+
+Output JSON Schema:
+{
+  "headline": "[<12 words; must include 'Jurni']",
+  "subline": "[≤10 words; fresh synthesis]",
+  "meetingText": "Let's meet for",
+  "drinkOptions": ["coffee ☕", "<MappedBeerType>"],
+  "buttonText": "[2–3 words CTA]",
+  "source_refs": [...],
+  "ledger": { ... }
+}
+
+BEER TYPE MAPPING (do not output the rules, just apply them):
+- CEO → "IPA"        // bold, aggressive, scale-oriented
+- CTO → "Pilsner"    // clean, structured, reliable
+- CPO → "Wheat"      // smooth, crafted, design-friendly
+- VP BD → "Ale"      // classic, social, deal-maker
+- Chief of Staff → "Stout"   // strong, steady, dependable
+- Mom → "Lager"      // easy, approachable, comforting
+
+GOOD EXAMPLES
+{
+  "headline": "I’m ready to build with Jurni",
+  "subline": "AI, design, disciplined execution",
+  "meetingText": "Let's meet for",
+  "drinkOptions": ["coffee ☕", "Wheat"],
+  "buttonText": "Book intro",
+  "source_refs": [],
+  "ledger": { ... }
+}
+{
+  "headline": "Let’s design conversion clarity at Jurni",
+  "subline": "Creative focus with discipline",
+  "meetingText": "Let's meet for",
+  "drinkOptions": ["coffee ☕", "IPA"],
+  "buttonText": "Review flow",
+  "source_refs": [],
+  "ledger": { ... }
+}
+
+BAD EXAMPLES
+- headline: "Funnels that scale"                  // ✗ missing “Jurni”
+- headline: "I want to join Jurni"                // ✗ needy phrasing
+- subline: "AI, design, grit"                     // ✗ reused from Hook
+- drinkOptions: ["coffee ☕","beer Lager"]         // ✗ “beer” not allowed
+- drinkOptions: ["coffee ☕","tea"]                // ✗ tea not allowed
+- buttonText: "Let's talk!"                       // ✗ vague, punctuation

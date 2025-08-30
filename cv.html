@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Friedman - CV</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Dark CV Styles - Funnel Aligned */
+        :root {
+            --primary-purple: #6366f1;
+            --primary-purple-light: #8b5cf6;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --dark-bg: #0a0a0a;
+            --dark-card: #1a1a1a;
+            --dark-accent: #2a2a2a;
+            --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-accent: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-light) 100%);
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: var(--white);
+            background: var(--dark-bg);
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.03;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #cd974c 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, #cd974c 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px;
+            pointer-events: none;
+            z-index: 1;
+            animation: patternFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes patternFloat {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-10px, -10px); }
+        }
+
+        /* Header with toggle */
+        .cv-header-main {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 0;
+        }
+
+        .cv-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.025em;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* CV Mode Toggle */
+        .cv-mode-toggle {
+            position: relative;
+            display: flex;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            padding: 0.25rem;
+            gap: 0.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .cv-mode-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 500;
+            font-size: 0.875rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all var(--transition);
+            position: relative;
+            z-index: 2;
+        }
+
+        .cv-mode-btn.active {
+            color: var(--white);
+        }
+
+        .cv-mode-indicator {
+            position: absolute;
+            top: 0.25rem;
+            height: calc(100% - 0.5rem);
+            background: var(--gradient-accent);
+            border-radius: 50px;
+            transition: all var(--transition);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .cv-mode-indicator.static-mode {
+            left: 50%;
+            width: calc(50% - 0.125rem);
+        }
+
+        .cv-mode-indicator.dynamic-mode {
+            left: 0.25rem;
+            width: calc(50% - 0.125rem);
+        }
+
+        /* CV Page Styles */
+        .cv-page {
+            margin-top: 100px;
+            min-height: calc(100vh - 100px);
+            padding: 2rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cv-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* CV Header with gradient background */
+        .cv-header {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-xl), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .cv-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-bg);
+            opacity: 0.1;
+            backdrop-filter: blur(10px);
+        }
+
+        .cv-header-content {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cv-name {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--white) 0%, var(--primary-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cv-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .cv-contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cv-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            font-size: 0.875rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all var(--transition);
+        }
+
+        .cv-contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-purple);
+            transform: translateY(-2px);
+        }
+
+        .cv-contact-item i {
+            font-size: 1rem;
+            color: var(--primary-purple);
+        }
+
+        .cv-summary {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 1300px;
+        }
+
+        .cv-photo {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin-top: 5rem;
+        }
+
+        .cv-photo-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-purple);
+            object-fit: cover;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .cv-photo-placeholder {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-purple);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .cv-photo-placeholder i {
+            font-size: 4rem;
+            color: var(--primary-purple);
+        }
+
+        /* CV Sections - Dark Theme */
+        .cv-section {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(42, 42, 42, 0.8) 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cv-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-accent);
+            opacity: 0.5;
+        }
+
+        .cv-section-heading {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .cv-section-heading::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+            width: 4px;
+            height: 1.5rem;
+            background: var(--gradient-accent);
+            border-radius: 2px;
+        }
+
+        /* Experience Items */
+        .cv-experience-item, .cv-education-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .cv-experience-item:last-child, .cv-education-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .cv-job-header {
+            margin-bottom: 1rem;
+        }
+
+        .cv-job-title {
+            font-size: 1.08rem;
+            line-height: 1.65;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 900px;
+            margin-bottom: 0.5rem;
+        }
+
+        .cv-job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .cv-company {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-purple);
+        }
+
+        .cv-period {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.25rem 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cv-location {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .cv-achievements {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cv-achievements li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .cv-achievements li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--primary-purple);
+            font-size: 0.75rem;
+            top: 0.125rem;
+        }
+
+        .cv-achievements li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Skills - Compact Grid */
+        .cv-skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .cv-skill-tag {
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            transition: all var(--transition);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .cv-skill-tag:hover {
+            background: var(--gradient-accent);
+            color: var(--white);
+            border-color: var(--primary-purple);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Personal Section - Compact Design */
+        .cv-personal-compact {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+        }
+
+        .personal-grid {
+            display: flex;
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+
+        .personal-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            transition: all var(--transition);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .family-card {
+            flex: 0 0 200px;
+        }
+
+        .interests-card {
+            flex: 1;
+        }
+
+        .personal-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary-purple);
+            transform: translateY(-2px);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .card-label {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .card-value {
+            font-size: 1.1rem;
+            color: var(--white);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .interests-compact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .interest-pill {
+            background: var(--gradient-accent);
+            color: var(--white);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition);
+        }
+
+        .interest-pill:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Education Details */
+        .cv-education-details {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cv-header-content {
+                padding: 0 1rem;
+            }
+
+            .cv-container {
+                padding: 0 1rem;
+            }
+
+            .cv-header {
+                padding: 2rem;
+            }
+
+            .cv-header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .cv-name {
+                font-size: 2.5rem;
+            }
+
+            .cv-title {
+                font-size: 1.08rem;
+                line-height: 1.65;
+                color: rgba(255, 255, 255, 0.9);
+                max-width: 98%;
+                margin-bottom: 0.5rem;
+                width: 120px;
+                height: 120px;
+            }
+
+            .cv-section {
+                padding: 1.5rem;
+            }
+
+            .cv-job-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .cv-contact {
+                justify-content: center;
+            }
+
+            .cv-mode-toggle {
+                order: 1;
+                margin-right: 1rem;
+            }
+
+            .cv-skills {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .personal-grid {
+                flex-direction: column;
+            }
+
+            .family-card {
+                flex: none;
+            }
+
+            .personal-card {
+                padding: 1.25rem;
+            }
+
+            .interests-compact {
+                gap: 0.4rem;
+            }
+
+            .interest-pill {
+                font-size: 0.75rem;
+                padding: 0.35rem 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="cv-header-main">
+        <div class="cv-header-content">
+            <a href="#" class="logo">HireAdam</a>
+            <nav class="header-nav">
+                <!-- CV Mode Toggle -->
+                <div class="cv-mode-toggle" id="cvModeToggle">
+                    <button class="cv-mode-btn" id="dynamicCvBtn">Dynamic CV</button>
+                    <button class="cv-mode-btn active" id="staticCvBtn">Static CV</button>
+                    <div class="cv-mode-indicator static-mode" id="cvModeIndicator"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="cv-page">
+        <div class="cv-container">
+            <!-- CV Header -->
+            <header class="cv-header">
+                <div class="cv-header-content">
+                    <div class="cv-header-text">
+                        <h1 class="cv-name" id="cvName">Loading...</h1>
+                        <h2 class="cv-title" id="cvRole">Loading...</h2>
+                        <div class="cv-contact" id="cvContact">
+                            <!-- Contact items will be populated -->
+                        </div>
+                        <p class="cv-summary" id="cvSummary">Loading professional summary...</p>
+                    </div>
+                    <div class="cv-photo">
+                        <div class="cv-photo-placeholder" id="cvPhotoContainer">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Personal Section - Compact -->
+            <section class="cv-section cv-personal-compact">
+                <h3 class="cv-section-heading">Beyond Work</h3>
+                <div id="cvPersonal">
+                    <div class="loading">Loading personal info...</div>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section class="cv-section">
+                <h3 class="cv-section-heading">Experience</h3>
+                <div id="cvExperience">
+                    <div class="loading">Loading experience...</div>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="cv-section">
+                <h3 class="cv-section-heading">Skills & Expertise</h3>
+                <div class="cv-skills" id="cvSkills">
+                    <div class="loading">Loading skills...</div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="cv-section">
+                <h3 class="cv-section-heading">Education</h3>
+                <div id="cvEducation">
+                    <div class="loading">Loading education...</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="js/floating-contact.js"></script>
+    <script>
+        // Contact Popup System - Same as Closer component
+        function initializeContactPopup() {
+            // Remove any existing popup styles
+            const existingStyle = document.getElementById('contactPopupStyles');
+            if (existingStyle) {
+                existingStyle.remove();
+            }
+
+            // Add popup styles
+            const popupStyles = `
+                /* Contact Popup Overlay */
+                .contact-popup-overlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.8);
+                    backdrop-filter: blur(10px);
+                    z-index: 10000;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                }
+
+                .contact-popup-overlay.active {
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                /* Popup Container */
+                .contact-popup {
+                    position: relative;
+                    background: linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(20,20,20,0.95) 100%);
+                    border: 1px solid rgba(255,255,255,0.1);
+                    border-radius: 24px;
+                    padding: 3rem;
+                    max-width: 500px;
+                    width: 90%;
+                    text-align: center;
+                    transform: scale(0.8) translateY(30px);
+                    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    overflow: hidden;
+                    backdrop-filter: blur(20px);
+                    box-shadow: 
+                        0 20px 40px rgba(0,0,0,0.3),
+                        inset 0 1px 0 rgba(255,255,255,0.1);
+                }
+
+                .contact-popup-overlay.active .contact-popup {
+                    transform: scale(1) translateY(0);
+                }
+
+                /* Animated Background Particles */
+                .popup-particles {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    pointer-events: none;
+                }
+
+                .popup-particle {
+                    position: absolute;
+                    width: 6px;
+                    height: 6px;
+                    background: #6366f1;
+                    border-radius: 50%;
+                    opacity: 0;
+                    animation: particleFloat 8s infinite linear;
+                }
+
+                .popup-particle:nth-child(1) {
+                    left: 10%;
+                    animation-delay: 0s;
+                    animation-duration: 6s;
+                }
+
+                .popup-particle:nth-child(2) {
+                    left: 30%;
+                    animation-delay: 2s;
+                    animation-duration: 8s;
+                }
+
+                .popup-particle:nth-child(3) {
+                    left: 50%;
+                    animation-delay: 4s;
+                    animation-duration: 7s;
+                }
+
+                .popup-particle:nth-child(4) {
+                    left: 70%;
+                    animation-delay: 1s;
+                    animation-duration: 9s;
+                }
+
+                .popup-particle:nth-child(5) {
+                    left: 90%;
+                    animation-delay: 3s;
+                    animation-duration: 6s;
+                }
+
+                @keyframes particleFloat {
+                    0% {
+                        bottom: -10px;
+                        opacity: 0;
+                        transform: translateX(0) scale(1);
+                    }
+                    10% {
+                        opacity: 0.8;
+                    }
+                    90% {
+                        opacity: 0.8;
+                    }
+                    100% {
+                        bottom: 110%;
+                        opacity: 0;
+                        transform: translateX(20px) scale(1.2);
+                    }
+                }
+
+                /* Popup Glow Effect */
+                .popup-glow {
+                    position: absolute;
+                    top: -50%;
+                    left: -50%;
+                    width: 200%;
+                    height: 200%;
+                    background: radial-gradient(circle, #6366f115 0%, transparent 70%);
+                    animation: glowRotate 10s linear infinite;
+                    pointer-events: none;
+                }
+
+                @keyframes glowRotate {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+
+                /* Close Button */
+                .popup-close {
+                    position: absolute;
+                    top: 1rem;
+                    right: 1rem;
+                    width: 40px;
+                    height: 40px;
+                    border: none;
+                    background: rgba(255,255,255,0.05);
+                    border-radius: 50%;
+                    color: rgba(255,255,255,0.6);
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.3s ease;
+                    font-size: 1.2rem;
+                    backdrop-filter: blur(10px);
+                }
+
+                .popup-close:hover {
+                    background: rgba(255,255,255,0.1);
+                    color: #fff;
+                    transform: rotate(90deg);
+                }
+
+                /* Popup Content */
+                .popup-header {
+                    margin-bottom: 2rem;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .popup-title {
+                    font-size: 2rem;
+                    font-weight: 300;
+                    color: #fff;
+                    margin-bottom: 0.5rem;
+                    background: linear-gradient(135deg, #fff 0%, #6366f1 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    letter-spacing: -0.02em;
+                }
+
+                .popup-subtitle {
+                    font-size: 1rem;
+                    color: rgba(255,255,255,0.6);
+                    font-weight: 300;
+                }
+
+                .popup-options {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .popup-contact-option {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1.25rem 1.5rem;
+                    background: rgba(255,255,255,0.02);
+                    border: 1px solid rgba(255,255,255,0.05);
+                    border-radius: 16px;
+                    text-decoration: none;
+                    color: rgba(255,255,255,0.8);
+                    transition: all 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .popup-contact-option::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(90deg, transparent, #6366f120, transparent);
+                    transition: left 0.6s ease;
+                }
+
+                .popup-contact-option:hover {
+                    background: rgba(255,255,255,0.05);
+                    border-color: #6366f140;
+                    transform: translateX(5px);
+                    color: #fff;
+                }
+
+                .popup-contact-option:hover::before {
+                    left: 100%;
+                }
+
+                .popup-option-icon {
+                    width: 24px;
+                    height: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: #6366f120;
+                    border-radius: 50%;
+                    color: #6366f1;
+                    font-size: 14px;
+                    flex-shrink: 0;
+                    transition: all 0.3s ease;
+                }
+
+                .popup-contact-option:hover .popup-option-icon {
+                    background: #6366f1;
+                    color: #fff;
+                    transform: scale(1.1);
+                }
+
+                .popup-option-content {
+                    text-align: left;
+                }
+
+                .popup-option-title {
+                    font-weight: 600;
+                    font-size: 1rem;
+                    margin-bottom: 0.25rem;
+                }
+
+                .popup-option-desc {
+                    font-size: 0.875rem;
+                    color: rgba(255,255,255,0.5);
+                }
+
+                @media (max-width: 768px) {
+                    .contact-popup {
+                        padding: 2rem;
+                        margin: 1rem;
+                    }
+
+                    .popup-title {
+                        font-size: 1.75rem;
+                    }
+                }
+
+                /* Add these styles to your cv.html file, right before the closing </style> tag */
+
+/* Experience with Thumbnails */
+.cv-job-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.cv-experience-thumbnail {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    transition: all var(--transition);
+}
+
+.cv-thumbnail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all var(--transition);
+}
+
+.cv-experience-item:hover .cv-experience-thumbnail {
+    border-color: var(--primary-purple);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.cv-experience-item:hover .cv-thumbnail-img {
+    transform: scale(1.1);
+}
+
+.cv-job-content {
+    flex: 1;
+    min-width: 0; /* Prevents flex item from overflowing */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .cv-job-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .cv-experience-thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Add this CSS to your cv.html file, right before </style> tag */
+
+/* Image Popup Viewer */
+.image-popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-popup-overlay.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.image-popup-container {
+    position: relative;
+    max-width: 50%;
+    max-height: 80vh;
+    transform: scale(0.8);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-popup-overlay.active .image-popup-container {
+    transform: scale(1);
+}
+
+.popup-image {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Close button */
+.popup-close-btn {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.popup-close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+/* Image caption */
+.popup-caption {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+/* Make thumbnail clickable */
+.cv-experience-thumbnail {
+    cursor: pointer;
+    position: relative;
+}
+
+.cv-experience-thumbnail::after {
+    content: '🔍';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.cv-experience-thumbnail:hover::after {
+    opacity: 0.9;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .image-popup-container {
+        max-width: 90%;
+    }
+    
+    .popup-close-btn {
+        top: 10px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.7);
+    }
+    
+    .popup-caption {
+        bottom: 10px;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 8px;
+        border-radius: 8px;
+    }
+}
+            `;
+
+            const styleElement = document.createElement('style');
+            styleElement.id = 'contactPopupStyles';
+            styleElement.textContent = popupStyles;
+            document.head.appendChild(styleElement);
+        }
+
+        // Show contact popup
+        function showContactPopup() {
+            // Create popup if it doesn't exist
+            let popup = document.getElementById('contactPopup');
+            if (!popup) {
+                popup = document.createElement('div');
+                popup.id = 'contactPopup';
+                popup.className = 'contact-popup-overlay';
+                popup.innerHTML = `
+                    <div class="contact-popup">
+                        <div class="popup-glow"></div>
+                        <div class="popup-particles">
+                            <div class="popup-particle"></div>
+                            <div class="popup-particle"></div>
+                            <div class="popup-particle"></div>
+                            <div class="popup-particle"></div>
+                            <div class="popup-particle"></div>
+                        </div>
+                        
+                        <button class="popup-close" onclick="hideContactPopup()">×</button>
+                        
+                        <div class="popup-header">
+                            <h3 class="popup-title">Let's Connect!</h3>
+                            <p class="popup-subtitle">Ready to build something amazing together?</p>
+                        </div>
+                        
+                        <div class="popup-options">
+                            <a href="mailto:friadaman@gmail.com?subject=Interest in Growth Design Services&body=Hi Adam,%0A%0AI'm interested in learning more about your growth design services.%0A%0ABest regards" class="popup-contact-option">
+                                <div class="popup-option-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="popup-option-content">
+                                    <div class="popup-option-title">Email Me</div>
+                                    <div class="popup-option-desc">adam@hireadam.com</div>
+                                </div>
+                            </a>
+                            
+                            <a href="https://wa.me/6581580570?text=Hi Adam! I'd love to discuss working together." target="_blank" class="popup-contact-option">
+                                <div class="popup-option-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="popup-option-content">
+                                    <div class="popup-option-title">WhatsApp</div>
+                                    <div class="popup-option-desc">Quick chat, faster response</div>
+                                </div>
+                            </a>
+                            
+                            <a href="https://linkedin.com/in/adam-fridman" target="_blank" class="popup-contact-option">
+                                <div class="popup-option-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div class="popup-option-content">
+                                    <div class="popup-option-title">LinkedIn</div>
+                                    <div class="popup-option-desc">Let's connect professionally</div>
+                                </div>
+                            </a>
+                            
+                            <a href="tel:+972557756877" class="popup-contact-option">
+                                <div class="popup-option-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="popup-option-content">
+                                    <div class="popup-option-title">Call Me</div>
+                                    <div class="popup-option-desc">+972-55-775-6877</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(popup);
+
+                // Close on overlay click
+                popup.addEventListener('click', (e) => {
+                    if (e.target === popup) {
+                        hideContactPopup();
+                    }
+                });
+
+                // Close on escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && popup.classList.contains('active')) {
+                        hideContactPopup();
+                    }
+                });
+            }
+
+            // Show popup with animation
+            popup.classList.add('active');
+        }
+
+        // Hide contact popup
+        function hideContactPopup() {
+            const popup = document.getElementById('contactPopup');
+            if (popup) {
+                popup.classList.remove('active');
+            }
+        }
+
+        // Override the floating contact behavior
+        function overrideFloatingContact() {
+            // Wait for floating contact to be initialized
+            setTimeout(() => {
+                const floatingContact = document.getElementById('floatingContact');
+                const floatingContactTrigger = document.getElementById('contactTrigger');
+                
+                if (floatingContact && floatingContactTrigger) {
+                    // Remove the panel since we're using popup instead
+                    const existingPanel = document.getElementById('contactPanel');
+                    if (existingPanel) {
+                        existingPanel.remove();
+                    }
+                    
+                    // Add click listener to the trigger to show our popup
+                    floatingContactTrigger.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        // Remove any 'active' class from floating contact
+                        floatingContact.classList.remove('active');
+                        // Show our popup instead
+                        showContactPopup();
+                    });
+                    
+                    console.log('✅ Floating contact now opens popup');
+                } else {
+                    console.log('⏳ Floating contact not ready yet, retrying...');
+                    // Try again in 100ms
+                    setTimeout(overrideFloatingContact, 100);
+                }
+            }, 500); // Give floating contact more time to initialize
+        }
+
+        // Initialize everything when page loads
+        let adamCV = null;
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadCV();
+            populateCV();
+            initializeToggle();
+            initializeContactPopup();
+            overrideFloatingContact();
+        });
+
+        async function loadCV() {
+            try {
+                // Try to load from API first
+                console.log('Loading CV data...');
+                const response = await fetch('/api/cv');
+                if (response.ok) {
+                    adamCV = await response.json();
+                    console.log('CV data loaded from API');
+                    return;
+                }
+            } catch (error) {
+                console.log('API not available, trying static file...');
+            }
+            
+            try {
+                // Try to load from static JSON file
+                const response = await fetch('/data/adam-cv.json');
+                if (response.ok) {
+                    adamCV = await response.json();
+                    console.log('CV data loaded from JSON file');
+                    return;
+                }
+            } catch (error) {
+                console.error('Could not load CV from JSON file:', error);
+            }
+            
+            // If all fails, use fallback data
+            console.log('Using fallback CV data');
+            adamCV = createFallbackCV();
+        }
+
+        function createFallbackCV() {
+            // Minimal fallback - should only be used if JSON fails to load
+            return {
+                profile: {
+                    name: "Loading...",
+                    email: "loading@example.com",
+                    phone: "+000-00-000-0000",
+                    whatsapp: "+000-00-000-0000",
+                    location: "Loading..."
+                },
+                bio: "Loading CV data...",
+                personal: {
+                    family: "Loading...",
+                    interests: []
+                },
+                experiences: [],
+                education: []
+            };
+        }
+
+        function populateCV() {
+            if (!adamCV) return;
+
+            // Populate header
+            document.getElementById('cvName').textContent = adamCV.profile.name;
+            document.getElementById('cvRole').textContent = "Designer & Builder";
+            document.getElementById('cvSummary').textContent = adamCV.bio;
+
+            // Populate contact info
+            const contactContainer = document.getElementById('cvContact');
+            contactContainer.innerHTML = '';
+            
+            const contactItems = [
+                { icon: 'fas fa-envelope', text: adamCV.profile.email, href: `mailto:${adamCV.profile.email}` },
+                { icon: 'fab fa-whatsapp', text: 'WhatsApp', href: `https://wa.me/${adamCV.profile.whatsapp.replace(/[^0-9]/g, '')}` },
+                { icon: 'fas fa-phone', text: adamCV.profile.phone, href: `tel:${adamCV.profile.phone}` },
+                { icon: 'fas fa-map-marker-alt', text: adamCV.profile.location, href: '#' }
+            ];
+
+            contactItems.forEach(item => {
+                const contactItem = document.createElement('div');
+                contactItem.className = 'cv-contact-item';
+                contactItem.innerHTML = `<i class="${item.icon}"></i><span>${item.text}</span>`;
+                if (item.href !== '#') {
+                    contactItem.style.cursor = 'pointer';
+                    contactItem.onclick = () => window.open(item.href, '_blank');
+                }
+                contactContainer.appendChild(contactItem);
+            });
+
+            // Handle profile photo
+            if (adamCV.profile.photo) {
+                const photoContainer = document.getElementById('cvPhotoContainer');
+                photoContainer.innerHTML = `<img src="${adamCV.profile.photo}" alt="${adamCV.profile.name}" class="cv-photo-img">`;
+            }
+
+            // Populate personal information - COMPACT VERSION
+            const personalContainer = document.getElementById('cvPersonal');
+            personalContainer.innerHTML = '';
+
+            if (adamCV.personal) {
+                const personalHTML = `
+                    <div class="personal-grid">
+                        <div class="personal-card family-card">
+                            <div class="card-icon">👨‍👧‍👦</div>
+                            <div class="card-content">
+                                <div class="card-label">Family</div>
+                                <div class="card-value">${adamCV.personal.family}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="personal-card interests-card">
+                            <div class="card-icon">🎯</div>
+                            <div class="card-content">
+                                <div class="card-label">Interests</div>
+                                <div class="interests-compact">
+                                    ${adamCV.personal.interests.map(interest => 
+                                        `<span class="interest-pill">${interest}</span>`
+                                    ).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                personalContainer.innerHTML = personalHTML;
+            }
+
+// Populate experience
+const experienceContainer = document.getElementById('cvExperience');
+experienceContainer.innerHTML = '';
+
+adamCV.experiences.forEach(exp => {
+    const expDiv = document.createElement('div');
+    expDiv.className = 'cv-experience-item';
+    
+    // Handle the new achievement structure
+    let achievementsList = '';
+    if (exp.achievements && Array.isArray(exp.achievements)) {
+        achievementsList = exp.achievements.map(achievement => {
+            // Check if achievement is an object with 'text' property or just a string
+            if (typeof achievement === 'object' && achievement.text) {
+                return `<li>${achievement.text}</li>`;
+            } else if (typeof achievement === 'string') {
+                return `<li>${achievement}</li>`;
+            }
+            return '';
+        }).join('');
+    }
+    
+    // Add thumbnail if it exists - now with onclick
+    const thumbnailHTML = exp.thumbnail ? `
+        <div class="cv-experience-thumbnail" onclick="openImagePopup('${exp.thumbnail}', '${exp.title} - ${exp.company}')">
+            <img src="${exp.thumbnail}" alt="${exp.title}" class="cv-thumbnail-img">
+        </div>
+    ` : '';
+    
+    expDiv.innerHTML = `
+        <div class="cv-job-wrapper">
+            ${thumbnailHTML}
+            <div class="cv-job-content">
+                <div class="cv-job-header">
+                    <h4 class="cv-job-title">${exp.title}</h4>
+                    <div class="cv-job-meta">
+                        <span class="cv-company">${exp.company}</span>
+                        <span class="cv-period">${exp.period}</span>
+                        ${exp.location ? `<span class="cv-location"><i class="fas fa-map-marker-alt"></i> ${exp.location}</span>` : ''}
+                    </div>
+                </div>
+                <ul class="cv-achievements">${achievementsList}</ul>
+            </div>
+        </div>
+    `;
+    
+    experienceContainer.appendChild(expDiv);
+});
+
+            // Populate skills - Collect unique skills from achievements within experiences
+            const skillsContainer = document.getElementById('cvSkills');
+            skillsContainer.innerHTML = '';
+            
+            // Collect all unique skills from the new structure
+            const allSkills = new Set();
+            
+            // Add skills from each experience's achievements
+            if (adamCV.experiences) {
+                adamCV.experiences.forEach(exp => {
+                    if (exp.achievements && Array.isArray(exp.achievements)) {
+                        exp.achievements.forEach(achievement => {
+                            if (achievement.skills && Array.isArray(achievement.skills)) {
+                                achievement.skills.forEach(skill => {
+                                    if (typeof skill === 'string') {
+                                        allSkills.add(skill);
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+            
+            // Also check education for skills
+            if (adamCV.education) {
+                adamCV.education.forEach(edu => {
+                    if (edu.details && Array.isArray(edu.details)) {
+                        edu.details.forEach(detail => {
+                            if (detail.skills && Array.isArray(detail.skills)) {
+                                detail.skills.forEach(skill => {
+                                    if (typeof skill === 'string') {
+                                        allSkills.add(skill);
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+            
+            // Convert Set to Array and sort alphabetically
+            const uniqueSkills = Array.from(allSkills).sort();
+            
+            // Display all unique skills
+            uniqueSkills.forEach(skill => {
+                const skillTag = document.createElement('div');
+                skillTag.className = 'cv-skill-tag';
+                skillTag.textContent = skill;
+                skillsContainer.appendChild(skillTag);
+            });
+            
+            console.log('Skills loaded:', uniqueSkills.length, 'unique skills from achievements');
+
+            // Populate education
+            const educationContainer = document.getElementById('cvEducation');
+            educationContainer.innerHTML = '';
+            
+            adamCV.education.forEach(edu => {
+                const eduDiv = document.createElement('div');
+                eduDiv.className = 'cv-education-item';
+                
+                // Handle the new details structure
+                let detailsList = '';
+                if (edu.details && Array.isArray(edu.details)) {
+                    detailsList = edu.details.map(detail => {
+                        // Check if detail is an object with 'text' property or just a string
+                        if (typeof detail === 'object' && detail.text) {
+                            return `<li>${detail.text}</li>`;
+                        } else if (typeof detail === 'string') {
+                            return `<li>${detail}</li>`;
+                        }
+                        return '';
+                    }).join('');
+                }
+                
+                eduDiv.innerHTML = `
+                    <div class="cv-job-header">
+                        <h4 class="cv-job-title">${edu.degree}</h4>
+                        <div class="cv-job-meta">
+                            <span class="cv-company">${edu.school}</span>
+                            <span class="cv-period">${edu.period}</span>
+                            ${edu.location ? `<span class="cv-location"><i class="fas fa-map-marker-alt"></i> ${edu.location}</span>` : ''}
+                        </div>
+                    </div>
+                    <ul class="cv-achievements">${detailsList}</ul>
+                `;
+                
+                educationContainer.appendChild(eduDiv);
+            });
+        }
+
+        function initializeToggle() {
+            document.getElementById('dynamicCvBtn').addEventListener('click', switchToDynamicCV);
+            document.getElementById('staticCvBtn').addEventListener('click', switchToStaticCV);
+        }
+
+        function switchToDynamicCV() {
+            window.location.href = 'index.html';
+        }
+
+        function switchToStaticCV() {
+            // Already on static CV page
+            document.getElementById('staticCvBtn').classList.add('active');
+            document.getElementById('dynamicCvBtn').classList.remove('active');
+            document.getElementById('cvModeIndicator').className = 'cv-mode-indicator static-mode';
+        }
+
+        // Image Popup Functions
+function createImagePopup() {
+    // Check if popup already exists
+    if (document.getElementById('imagePopupOverlay')) {
+        return;
+    }
+    
+    // Create popup HTML
+    const popupHTML = `
+        <div id="imagePopupOverlay" class="image-popup-overlay" onclick="closeImagePopup(event)">
+            <div class="image-popup-container">
+                <div class="popup-close-btn" onclick="closeImagePopup(event)">×</div>
+                <img id="popupImage" class="popup-image" src="" alt="">
+                <div id="popupCaption" class="popup-caption"></div>
+            </div>
+        </div>
+    `;
+    
+    // Add to body
+    document.body.insertAdjacentHTML('beforeend', popupHTML);
+}
+
+function openImagePopup(imageSrc, caption) {
+    // Create popup if it doesn't exist
+    createImagePopup();
+    
+    // Get popup elements
+    const overlay = document.getElementById('imagePopupOverlay');
+    const image = document.getElementById('popupImage');
+    const captionElement = document.getElementById('popupCaption');
+    
+    // Set image and caption
+    image.src = imageSrc;
+    image.alt = caption;
+    captionElement.textContent = caption;
+    
+    // Show popup with animation
+    setTimeout(() => {
+        overlay.classList.add('active');
+    }, 10);
+    
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+}
+
+function closeImagePopup(event) {
+    // Prevent closing when clicking on the image itself
+    if (event && event.target.classList.contains('popup-image')) {
+        return;
+    }
+    const overlay = document.getElementById('imagePopupOverlay');
+    if (overlay) {
+        overlay.classList.remove('active');
+        
+        // Re-enable body scroll
+        document.body.style.overflow = '';
+        
+        // Remove popup after animation
+        setTimeout(() => {
+            const image = document.getElementById('popupImage');
+            if (image) {
+                image.src = '';
+            }
+        }, 300);
+    }
+}
+
+// Add keyboard support for closing popup
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeImagePopup(e);
+    }
+});
+
+// Initialize popup on page load
+document.addEventListener('DOMContentLoaded', () => {
+    createImagePopup();
+});
+
+    </script>
+</body>
+</html>
